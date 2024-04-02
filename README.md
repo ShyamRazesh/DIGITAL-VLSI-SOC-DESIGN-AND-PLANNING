@@ -10,15 +10,18 @@ Day-1
 
 It is the process of designing an ASIC chip that uses digital logic components, as opposed to analog.
 
-  ![digital asic design jpeg](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/441d867a-4a99-4e58-9be7-5c7ed66cacf3)
+![digital asic design jpeg](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/378454d8-ab00-4e81-9f67-cbfae6892e88)
+
 
 ## Open Source Digital ASIC Design
 
-  ![open source asic digital design](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/6ccff321-4bb6-48ec-8024-1931d86120f6)
+![open source asic digital design](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b0c58076-7eae-476e-90a8-b0fed72cbe38)
+
 
 RTL2GDS Flow
 --------
-   ![Screenshot 2024-03-31 110337](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/5975a14f-7840-418b-8c4f-f868e28a2890)
+
+![Screenshot 2024-03-31 110337](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/497c6756-2812-45e1-917c-920b445359ec)
 
 
 1. **Synthesis**:
@@ -51,84 +54,86 @@ RTL2GDS Flow
 
      OpenLANE and strive chipset
      -----
-     ![Screenshot 2024-03-31 111302](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/262ddba9-bef6-40ec-a329-87cfdb14fd6b)
-     ![Screenshot 2024-03-31 111426](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/ee8d8cf9-8062-4fc4-80ff-945a4e157f1f)
+      ![Screenshot 2024-03-31 111302](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/180a7cfc-4550-420a-8d90-9e2d7f922dd3)
+      ![Screenshot 2024-03-31 111426](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2e50b2b9-130b-4a83-8776-d2cff1271b4f)
 
-     OpenLANE ASIC Flow
-     ----------
-     ![Screenshot 2024-03-31 111559](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/e8418512-486b-4340-99ba-793631f07663)
+
+     ## OpenLANE ASIC Flow
+     
+       ![Screenshot 2024-03-31 111559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/77abde6f-334f-4823-835a-0954dd5afb71)
 
      OpenLANE Directory structure
      ----------
+     
      Basic Linux Commands cd: opens the particular folder ls: lists the content of the folder pwd: shows the present working directory mkdir: to make a new directory command --help: shows the complete use 
      of that command clear: clears the terminal screen
   
       Exploring OpenLANE Directory
      ----
+     
      Working on sky130A(pdk) which contains libs.tech which has respective files on tools such as magic, netgen etc., and libs.ref which has files related to the specific technology.
   
      # Open the working Directory
      
-     ![Screenshot 2024-03-31 200154](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/0b7d4eef-fc59-44f4-947a-7e9784568edd)
-
+     ![Screenshot 2024-03-31 200154](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f5df534b-d7d7-4157-9934-7c3f03060d32)
 
      ```bash
         cd Desktop
         cd work/tools
         cd openlane_working_dir
-       cd openlane
+        cd openlane
      ```
-    ![Screenshot 2024-03-31 200453](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/1058fb06-bc72-45ae-8b99-178001dceb9a)
    
    ## To open the Openlane
    
-        After getting into the directory, enter the commands
-        
-    ![Screenshot 2024-03-31 201104](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/0161131d-48e7-4196-b155-a958aa2a3274)
+              After getting into the directory, enter the commands
    
+        ![Screenshot 2024-03-31 200453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/56fb6185-cccd-4e55-9842-dc2611691f3e)
+
             ```bash
-              docker
-              pwd
-              ls -ltr
+               docker
+               pwd
+               ls -ltr
             ```
+   
    ## Interactive Mode
    
-          To open the openlane in interactive mode, 
-      
-      ![Screenshot 2024-03-31 215317](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/519d0e5a-7307-4032-8cc0-5857dc928b3b)
-      
-   You may run the interactively by using the  `-interactive`  option:
+          To open the openlane in interactive mode,
+   
+      ![Screenshot 2024-03-31 201104](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ef2765ef-0632-4b26-87df-4f5981438323)
+   
+         You may run the interactively by using the  `-interactive`  option:
    
       ```bash
         ./flow.tcl -interactive
       ```
             
-      To prepare the openlane,
+        To prepare the openlane,
       
-   ![Screenshot 2024-03-31 220804](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/4a9bebde-b9cb-4b69-8c0e-31f086e0ec24)
-   
+    ![Screenshot 2024-03-31 215317](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7b5327ac-3f75-400e-ad07-423f20fb66f8)
+
        ```bash
           package require openlane 0.9
           prep - design picorv32a
        ```
             
       ### Synthesis
-     To run the Synthesis
+   
+        To run the Synthesis
    
             ```bash
              run_synthesis
             ```
    
-      ![Screenshot 2024-03-31 220804](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/bc3b73b0-4abc-43e0-a515-3d362969ebfe)
-            
+   ![Screenshot 2024-03-31 220804](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e9199ee6-71ee-46e0-829a-e0b36a9e4dbe)
+         
       ## Report generated after synthesis
    
-
        Before running, we saw that the result folder was empty. But now, after running the synthesis, we can see that all the mapping has been done by ABC.
-   And in the report, we can see when the actual synthesis has been done. and the actual statistics synthesis report is shown below, which is the same as what we have seen before.
-
-      ![Screenshot 2024-03-31 223408](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/0d45266c-f1c0-4c45-b025-5a97a763b751)
-      
+       And in the report, we can see when the actual synthesis has been done. and the actual statistics synthesis report is shown below, which is the same as what we have seen before.
+   
+    ![Screenshot 2024-03-31 223408](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4ee153b4-d2b7-4001-bfa5-82ac17cbba3f)
+ 
       Particularly we are interested in finding the Flop ratio. This can be calculated by using the formula:
    
        Flop Ratio = No. of D FlipfLops/Total No. of cells
@@ -138,20 +143,21 @@ RTL2GDS Flow
                    =0.10842
       
         Percentage of D FF's = 10.842%
-      
-   ![Screenshot 2024-03-31 222449](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/8392d8fe-fc26-470b-bdc0-0f6ea7f84e6d)
-
-   ![Screenshot 2024-03-31 222608](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/de7f0707-46d4-4ed0-869d-e24a30ae0a54)
-
-      ![Screenshot 2024-03-31 232041](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/3d0038c0-6d6b-4f96-9054-cbc9b00ccdc1)
    
+    ![Screenshot 2024-03-31 222449](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6abcfc62-192c-4797-8917-9b597bbd8a62)
+        
+    ![Screenshot 2024-03-31 222608](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/32c5635d-7f1b-483f-b8af-d03c27e39192)
+
+   ![Screenshot 2024-03-31 232041](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f9fe058c-63e1-47b1-aadc-940fecd28e13)
+
    Chip area for the module = 147712.9184
       
-      ## Synthesis Report directory
+     ## Synthesis Report directory
    
       The Synthesis Report are found in the directory
+      
+        ![Screenshot 2024-03-31 231746](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/264ac2e8-72f6-4d88-b0d7-0c971ab2b6d9)
 
-    ![Screenshot 2024-03-31 231746](https://github.com/ShyamRazesh/Digital-VLSI-SOC-Design-and-Planning/assets/138649249/bec9aa9e-43fd-4d3a-a0f9-59b7e21dbaa8)
       
       ```bash
          ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/29-03_15-37/reports/synthesis/1-yosys_4.stat.rpt
@@ -166,3 +172,11 @@ RTL2GDS Flow
    ## Day2
    
     ## Floorplanning and Intro to Library Cells
+   
+       ![Screenshot 2024-04-02 010306](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8b0a351d-71ef-442b-91c3-7de5a83b12bb)
+
+       ![Screenshot 2024-04-02 214343](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/87f882b4-f642-4d13-a16b-9c3c46c7c360)
+
+
+
+   
