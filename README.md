@@ -172,10 +172,18 @@ RTL2GDS Flow
    ## Day2
    
     ## Floorplanning and Intro to Library Cells
-   
+
        ![Screenshot 2024-04-02 010306](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8b0a351d-71ef-442b-91c3-7de5a83b12bb)
 
        ![Screenshot 2024-04-02 214343](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/87f882b4-f642-4d13-a16b-9c3c46c7c360)
+
+   ##
+   
+   Skywater 130 PDK: https://github.com/google/skywater-pdk
+
+   Open_PDKS:  http://www.opencircuitdesign.com/open_pdks/
+   
+   Digital VLSI Soc Design and planning: https://vsdsquadron.vlsisystemdesign.com/digital-vlsi-soc-design-and-planning/
 
 
 
