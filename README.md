@@ -255,19 +255,92 @@ RTL2GDS Flow
     ![Screenshot 2024-04-03 004729](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5140209-0503-4f61-9217-6371237f721e)
 
     ![Screenshot 2024-04-03 005032](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f79b84f1-2371-40cc-853b-a56ffe985850)
+  
+    ![Screenshot 2024-04-04 153800](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5ef356eb-c8cd-46fa-839f-2e613b722506)
 
+![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
 
+![Screenshot 2024-04-05 231732](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b778a8ed-3039-47a1-a326-c67c9ae55a24)
 
+![Screenshot 2024-04-06 002259](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c88402b-5401-4b30-b3b5-09b4b9c10788)
 
+![Screenshot 2024-04-06 002339](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7dfd5fad-be9e-4029-bb45-bdbaae1bda18)
 
+![Screenshot 2024-04-06 003511](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a750f5cc-6246-4856-b00a-53465b1c0888)
 
+![Screenshot 2024-04-06 004214](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fea69f33-08bf-49e5-8a08-6c2e8912f6a3)
 
+![Screenshot 2024-04-06 004138](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/528a5661-6598-4a36-8d28-51943b112092)
 
+![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
 
+![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
 
+![Screenshot 2024-04-06 154821](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/639eea30-56d0-438d-9cfa-a4b61377cb2e)
 
+![Screenshot 2024-04-06 154939](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b41cdc3e-adb9-4768-a378-077c102b70c4)
 
+![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
 
+![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
+
+![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
+
+![Screenshot 2024-04-06 010332](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/23e5496d-b772-43d3-8749-30225e796455)
+
+![Screenshot 2024-04-06 010449](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bc8cd182-4f06-4770-b83a-37ea9d10c2f8)
+
+![Screenshot 2024-04-06 010646](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4394d68e-b013-41dd-9722-98ffff5633b9)
+
+![Screenshot 2024-04-06 011114](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8d7323ce-f036-4a6f-83dd-f00da617b8de)
+
+![Screenshot 2024-04-06 011144](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f3b343fe-1277-4d30-80a0-4dc44d2be1ef)
+
+![Screenshot 2024-04-06 011431](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/380a7f32-5a4f-4e02-a08b-9ad07a7f1378)
+
+![Screenshot 2024-04-06 011553](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e663d62f-d18a-471a-8748-c8d6525a93de)
+
+![Screenshot 2024-04-06 012239](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/57b5c278-46e4-42fa-9f70-61d88b5e8a37)
+
+![Screenshot 2024-04-06 012239](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/03c81be0-6b6c-430a-9cd2-b753d7321f37)
+
+![Screenshot 2024-04-06 012348](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d6d37c41-abe9-45a5-9c52-c5c06a3468fc)
+
+![Screenshot 2024-03-31 215317](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/aae4c69d-5bf1-4d03-bb60-a8443886ade1)
+
+![Screenshot 2024-04-06 014555](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/23a4c539-317b-49b0-b69e-890573a57b35)
+
+![Screenshot 2024-04-06 142503](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bfa6c5df-ae6f-4fd0-86f4-719fb9752304)
+
+![Screenshot 2024-04-06 143302](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2f7e5949-32c1-4f85-835e-569ea079976c)
+
+![Screenshot 2024-04-06 145505](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d4b7ab17-dedc-4c6b-982a-13843d6c2de8)
+
+![Screenshot 2024-04-06 145607](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/180134f8-7459-43b1-9e30-5c3817b5d2eb)
+
+![Screenshot 2024-04-06 145825](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9cf64b34-5ff0-4804-9766-82f01452a56c)
+
+![Screenshot 2024-04-06 150235](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/12fa6efb-a1d1-44f3-93e9-a9477df95920)
+
+![Screenshot 2024-04-06 150401](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1e48c44c-38a7-4102-8dff-8c6fa7ebcd9f)
+
+![Screenshot 2024-04-06 150453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/facab920-65c4-4c05-8588-0fb7fdf71014)
+
+![Screenshot 2024-04-06 150531](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2a7baba-dd6b-4c26-8e7d-ccf44b2712e6)
+
+![Screenshot 2024-04-06 150629](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0b97be34-b66d-4e78-8ce9-1a8583b90e52)
+
+![Screenshot 2024-04-06 150814](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c746d413-06d4-4b70-a110-ef4de1ceca8f)
+
+![Screenshot 2024-04-06 151452](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/25538310-8805-499b-b144-2b88ace99bfc)
+
+![Screenshot 2024-04-06 151535](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e6188e19-a829-40d0-b9b4-34f43a3af6d2)
+
+![Screenshot 2024-04-06 151636](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e2087d10-cd10-46ef-a5e4-c061e7391745)
+
+![Screenshot 2024-04-06 151806](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/09aba464-d544-4d08-befb-68f19ff7c0d4)
+
+![Screenshot 2024-04-06 151949](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c1d61609-47a8-419e-9d32-1059230b1593)
 
 
 
