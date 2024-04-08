@@ -497,12 +497,24 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-07 114617](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e91dae15-4970-47e6-9066-04705fc6f982)
 
+Newly created `pre_sta.conf` for STA analysis in openlane directory
 ![Screenshot 2024-04-07 114707](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/616a2d1f-82eb-4aab-b971-f15222b5aa38)
+
+Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
+![Screenshot 2024-04-07 114935](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f0e42b26-0030-4196-811b-b2ecb2379211)
 
 ![Screenshot 2024-04-07 114819](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e9b39a9-83fe-4647-852c-1f370c5c9e64)
 
-![Screenshot 2024-04-07 114935](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f0e42b26-0030-4196-811b-b2ecb2379211)
 
+Commands to run STA in another terminal
+```bash
+   # Change directory to openlane
+   cd Desktop/work/tools/openlane_working_dir/openlane
+   
+   # Command to invoke OpenSTA tool with script
+   sta pre_sta.conf
+```
+Screenshots of commands run
 ![Screenshot 2024-04-07 115016](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/042dd58c-7014-4b82-9b28-fdc13b2e4ede)
 
 ![Screenshot 2024-04-07 115113](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ee59e352-e755-4702-9925-e4a6603c1f3a)
@@ -519,28 +531,90 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-07 122840](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/323c806f-16f3-4911-89e8-9c825b78c969)
 
+Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
+
+Commands to include new lef and perform synthesis
+```bash
+   # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+   prep -design picorv32a -tag 01-04_19-21 -overwrite
+   
+   # Adiitional commands to include newly added lef to openlane flow
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Command to set new value for SYNTH_SIZING
+   set ::env(SYNTH_SIZING) 1
+   
+   # Command to set new value for SYNTH_MAX_FANOUT
+   set ::env(SYNTH_MAX_FANOUT) 4
+   
+   # Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+   echo $::env(SYNTH_DRIVING_CELL)
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+```
+Commands run final screenshot
 ![Screenshot 2024-04-07 123012](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b72dac5e-c5d4-4cd8-8365-a4eef129c5dd)
 
 ![Screenshot 2024-04-07 123210](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/af919464-c861-4f71-8161-1f39cdd55d43)
 
+Commands to run STA in another terminal
+```bash
+   # Change directory to openlane
+   cd Desktop/work/tools/openlane_working_dir/openlane
+   
+   # Command to invoke OpenSTA tool with script
+   sta pre_sta.conf
+```
+Screenshots of commands run
 ![Screenshot 2024-04-07 124001](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f7b1cd63-f423-4e12-a4f2-567a530df6d5)
 
 ![Screenshot 2024-04-07 124137](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2852155c-6104-4455-bbef-b74f5859b1d6)
 
 ![Screenshot 2024-04-07 124220](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e32fe091-a9b2-4848-9b0f-d5f5726e3635)
 
-![Screenshot 2024-04-07 124510](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c846a389-7fbf-4fb8-970e-8ec2678058a4)
-
-![Screenshot 2024-04-07 125028](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b7ae1697-0dd8-4748-a2a3-d1036288db12)
-
+- Make timing ECO fixes to remove all violations.
+  
+OR gate of drive strength 2 is driving 4 fanouts
 ![Screenshot 2024-04-07 125131](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8adece7d-d61d-4cba-bf23-ffb8364b3089)
 
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 2, but turns out to reduce of slack is less due to less driving strength
+
+```bash
+   # Reports all the connections to a net
+   report_net -connections _11675_
+   
+   # Replacing cell
+   replace_cell _14514_ sky130_fd_sc_hd__or3_2
+   
+   # Generating custom timing report
+   report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result - slack reduced
 ![Screenshot 2024-04-07 125225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/09fa51f1-6f3c-4de8-9171-46374e86429f)
 
 ![Screenshot 2024-04-07 125605](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c7d1c616-0128-4bf3-bca8-249d878bb051)
 
+OR gate of drive strength 2 is driving 4 fanouts
 ![Screenshot 2024-04-07 125704](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8a7fce0a-df7b-4c6e-bc1a-ad03b47e0ccb)
 
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+
+```bash
+   # Reports all the connections to a net
+   report_net -connections _11672_
+   
+   # Checking command syntax
+   help replace_cell
+   
+   # Replacing cell
+   replace_cell _14510_ sky130_fd_sc_hd__or3_4
+   
+   # Generating custom timing report
+   report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result - slack reduced
 ![Screenshot 2024-04-07 125726](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3b9f4e83-d42e-4118-b1d1-6fb6bfa2207c)
 
 OR gate of drive strength 2 driving OA gate has more delay
