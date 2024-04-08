@@ -390,15 +390,19 @@ let's see what inside the spice file by "vim sky130_inv.spice".
 ![Screenshot 2024-04-03 005032](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f79b84f1-2371-40cc-853b-a56ffe985850)
 
 ![Screenshot 2024-04-04 153800](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5ef356eb-c8cd-46fa-839f-2e613b722506)
+Measuring unit distance in layout grid
+![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
 
 ![Screenshot 2024-04-08 153747](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/06df880d-8dc4-488a-99f6-2c16461b3bba)
 
 run the spice file in ngspice
-  ` ngspice sky130_inv.spice`
-To plot the graph between Voltage and time type the command in ngspice
-   `plot y vs time a`
-![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
 
+  ` ngspice sky130_inv.spice`
+  
+To plot the graph between Voltage and time type the command in ngspice
+
+   `plot y vs time a`
+   
 after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-06 002259](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c88402b-5401-4b30-b3b5-09b4b9c10788)
 
