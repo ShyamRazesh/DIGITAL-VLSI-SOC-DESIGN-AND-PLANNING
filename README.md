@@ -588,7 +588,57 @@ after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-08 163428](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b8b3df0d-d984-49ca-8fb3-853e469f6813)
 
 ![Screenshot 2024-04-08 163453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d52d961a-4fc2-4a8d-a3af-1b92c98ada42)
+## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA
 
+Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
+Commands to perform all necessary stages up until now
+```bash
+   # Change directory to openlane flow directory
+   cd Desktop/work/tools/openlane_working_dir/openlane
+   
+   # alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+   # Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+   docker
+   # Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+   ./flow.tcl -interactive
+   
+   # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+   package require openlane 0.9
+   
+   # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+   prep -design picorv32a
+   
+   # Addiitional commands to include newly added lef to openlane flow merged.lef
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Command to set new value for SYNTH_STRATEGY
+   set ::env(SYNTH_STRATEGY) "DELAY 3"
+   
+   # Command to set new value for SYNTH_SIZING
+   set ::env(SYNTH_SIZING) 1
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+   
+   # Following commands are alltogather sourced in "run_floorplan" command
+   init_floorplan
+   place_io
+   tap_decap_or
+   
+   # Now we are ready to run placement
+   run_placement
+   
+   # Incase getting error
+   unset ::env(LIB_CTS)
+   
+   # With placement done we are now ready to run CTS
+   run_cts
+   
+   # Now that CTS is done we can do power distribution network
+   gen_pdn
+```
+Screenshots of power distribution network run
 ![Screenshot 2024-04-08 164124](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9af544ce-97e4-4950-9920-a6f574c78f1f)
 
 ![Screenshot 2024-04-08 164251](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0df5d473-6865-41b6-88e5-4dee146cab80)
@@ -621,25 +671,50 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-08 172455](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d5585379-771e-4dcc-9885-89a5336d21c7)
 
+Commands to load PDN def in magic in another terminal
+```bash
+   # Change directory to path containing generated PDN def
+   cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/floorplan/
+   
+   # Command to load the PDN def in magic tool
+   magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 14-pdn.def &
+```
+Screenshots of PDN def
 ![Screenshot 2024-04-08 214953](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5643d170-6924-4e0e-bec4-ea718dd241a3)
 
 ![Screenshot 2024-04-08 215115](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a852a80c-bce7-49dc-9d11-044e121031b8)
 
 ![Screenshot 2024-04-08 215248](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d92be306-c7d7-456e-aa3f-5fd150b0eab3)
 
+Basics of global and detail routing and configure TritonRoute
+The final step of physical design is Routing.
+The usage of the `def` command in the image above is to indicate that the latest completed step was the generation of PDN.
+
+The resulting file `17-pdn.def` contains the information from `cts.def` as well as the power distribution network.
+
+If one wants to learn about the various switches available for routing, they can refer to the README.md file located in the configuration folder of the OpenLANE directory.
 ![r](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5f38ad9-e107-4151-a4a7-8554ca193ee5)
 
 ![r tcl](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8b02e49e-0180-4804-8a09-3ab5ce41bda2)
+By executing specific commands, we can determine the type of global and detailed routing that will be performed.
+In case we want to change the routing type, we can use the `set` command followed by the parameter names mentioned in the routing section of the README.md file.
 
+## Perform detailed routing using TritonRoute and explore the routed layout.
+Command to perform routing
+       ```bash
+         # Check value of 'CURRENT_DEF'
+         echo $::env(CURRENT_DEF)
+         
+         # Check value of 'ROUTING_STRATEGY'
+         echo $::env(ROUTING_STRATEGY)
+         
+         # Command for detailed route using TritonRoute
+         run_routing
+      ```  
+Screenshots of routing run
 ![Screenshot 2024-04-08 221336](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d7558d42-d2f1-4a39-bd5d-6ac2663f8ad6)
 
 ![Screenshot 2024-04-08 221446](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fad6abd3-b21a-47fc-9925-4b7647c2d138)
-
-![Screenshot 2024-04-08 221735](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/adaeaa58-c15e-4303-8f12-ea4ed01fc093)
-
-![Screenshot 2024-04-08 222325](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c76e17d9-bbd4-49cd-bf3d-63edacd2e743)
-
-![Screenshot 2024-04-08 222509](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c938a7d-2411-4af8-b89a-0211bdc3f7bb)
 
 Commands to load routed def in magic in another terminal
 ```bash
@@ -649,12 +724,20 @@ Commands to load routed def in magic in another terminal
    # Command to load the routed def in magic tool
    magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
 ```
-Screenshots of routed def
-![Screenshot 2024-04-08 222615](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/470a7bf1-0db0-41e3-8925-04f68886ee79)
+![Screenshot 2024-04-08 221735](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/adaeaa58-c15e-4303-8f12-ea4ed01fc093)
 
 ![Screenshot 2024-04-08 222713](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e106ccff-1226-4540-824e-f2273a218fc1)
 
 ![Screenshot 2024-04-08 222836](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7eaf0f43-bae2-4f7c-8892-95aa17cc038d)
+
+![Screenshot 2024-04-08 222325](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c76e17d9-bbd4-49cd-bf3d-63edacd2e743)
+
+![Screenshot 2024-04-08 222509](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c938a7d-2411-4af8-b89a-0211bdc3f7bb)
+
+Screenshots of routed def
+![Screenshot 2024-04-08 222615](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/470a7bf1-0db0-41e3-8925-04f68886ee79)
+
+
 
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/01-04_19-21/tmp/routing` directory
 ![Screenshot 2024-04-08 223242](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/dba0a2da-3d11-4b52-997e-bd89de810d20)
