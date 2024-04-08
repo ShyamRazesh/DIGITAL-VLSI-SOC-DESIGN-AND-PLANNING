@@ -543,11 +543,26 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-07 125726](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3b9f4e83-d42e-4118-b1d1-6fb6bfa2207c)
 
+OR gate of drive strength 2 driving OA gate has more delay
 ![Screenshot 2024-04-07 125858](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/eb32e6a3-dd9f-4465-b720-6ad60713a6a9)
 
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+
+```bash
+   # Reports all the connections to a net
+   report_net -connections _11643_
+   
+   # Replacing cell
+   replace_cell _14481_ sky130_fd_sc_hd__or4_4
+   
+   # Generating custom timing report
+   report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result - slack reduced
 ![Screenshot 2024-04-07 130359](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3efb77e5-de23-4981-80eb-47f8fcdb42e5)
 
 ![Screenshot 2024-04-07 130456](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/042e0432-ab0a-4334-88ff-c0f47a1dad34)
+
 OR gate of drive strength 2 driving OA gate has more delay
 ![Screenshot 2024-04-07 130602](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2a5fd557-3fd4-4121-99cd-969b41b494cc)
 
