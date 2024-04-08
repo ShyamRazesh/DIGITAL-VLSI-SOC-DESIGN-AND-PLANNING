@@ -583,6 +583,81 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-07 235728](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/563f4b8b-581b-4743-97f0-534ef2895d54)
 
+![Screenshot 2024-04-08 163333](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fdfbbb40-2289-4896-9a53-ebc2641446df)
+
+![Screenshot 2024-04-08 163428](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b8b3df0d-d984-49ca-8fb3-853e469f6813)
+
+![Screenshot 2024-04-08 163453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d52d961a-4fc2-4a8d-a3af-1b92c98ada42)
+
+![Screenshot 2024-04-08 164124](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9af544ce-97e4-4950-9920-a6f574c78f1f)
+
+![Screenshot 2024-04-08 164251](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0df5d473-6865-41b6-88e5-4dee146cab80)
+
+![Screenshot 2024-04-08 165534](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/66f3d5b5-3f98-4635-b462-7e3bb66c7586)
+
+![Screenshot 2024-04-08 165618](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/60ab5bf3-7373-4f73-bc83-7d14e48b3e63)
+
+![Screenshot 2024-04-08 165655](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/47d7ead1-acc3-4e1c-90e0-0dff66089413)
+
+![Screenshot 2024-04-08 165725](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c061dbce-ae6b-40bf-8690-e80c96c98918)
+
+![Screenshot 2024-04-08 165759](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fde12726-9de9-4292-aacc-57e03d64dfd7)
+
+![Screenshot 2024-04-08 165827](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5af648c1-8da7-47e9-95f1-8c6f50d92c81)
+
+![Screenshot 2024-04-08 165909](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/45e48fcd-4493-44b8-9927-23d8c3058e41)
+
+![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
+
+![Screenshot 2024-04-08 171326](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e9de6d93-ec27-4019-8d1c-62df1716542a)
+
+![Screenshot 2024-04-08 171409](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/825f4232-4465-47e4-913b-ae545dd13ec4)
+
+![Screenshot 2024-04-08 171511](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e025be35-5471-4846-8e75-ac7509e659ba)
+
+![Screenshot 2024-04-08 171732](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/297f36f8-effc-404b-bfa6-7d42790e6d63)
+
+![Screenshot 2024-04-08 172050](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/223351a7-6a58-4135-89cc-3338e65e7ac0)
+
+![Screenshot 2024-04-08 172455](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d5585379-771e-4dcc-9885-89a5336d21c7)
+
+![Screenshot 2024-04-08 214953](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5643d170-6924-4e0e-bec4-ea718dd241a3)
+
+![Screenshot 2024-04-08 215115](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a852a80c-bce7-49dc-9d11-044e121031b8)
+
+![Screenshot 2024-04-08 215248](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d92be306-c7d7-456e-aa3f-5fd150b0eab3)
+
+![r](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5f38ad9-e107-4151-a4a7-8554ca193ee5)
+
+![r tcl](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8b02e49e-0180-4804-8a09-3ab5ce41bda2)
+
+![Screenshot 2024-04-08 221336](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d7558d42-d2f1-4a39-bd5d-6ac2663f8ad6)
+
+![Screenshot 2024-04-08 221446](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fad6abd3-b21a-47fc-9925-4b7647c2d138)
+
+![Screenshot 2024-04-08 221735](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/adaeaa58-c15e-4303-8f12-ea4ed01fc093)
+
+![Screenshot 2024-04-08 222325](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c76e17d9-bbd4-49cd-bf3d-63edacd2e743)
+
+![Screenshot 2024-04-08 222509](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c938a7d-2411-4af8-b89a-0211bdc3f7bb)
+
+Commands to load routed def in magic in another terminal
+```bash
+   # Change directory to path containing routed def
+   cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/
+   
+   # Command to load the routed def in magic tool
+   magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+Screenshots of routed def
+![Screenshot 2024-04-08 222615](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/470a7bf1-0db0-41e3-8925-04f68886ee79)
+
+![Screenshot 2024-04-08 222713](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e106ccff-1226-4540-824e-f2273a218fc1)
+
+![Screenshot 2024-04-08 222836](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7eaf0f43-bae2-4f7c-8892-95aa17cc038d)
+
+Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/01-04_19-21/tmp/routing` directory
+![Screenshot 2024-04-08 223242](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/dba0a2da-3d11-4b52-997e-bd89de810d20)
 
 
 
