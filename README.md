@@ -548,21 +548,76 @@ after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-07 130359](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3efb77e5-de23-4981-80eb-47f8fcdb42e5)
 
 ![Screenshot 2024-04-07 130456](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/042e0432-ab0a-4334-88ff-c0f47a1dad34)
-
+OR gate of drive strength 2 driving OA gate has more delay
 ![Screenshot 2024-04-07 130602](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2a5fd557-3fd4-4121-99cd-969b41b494cc)
 
+Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+
+```bash
+   # Reports all the connections to a net
+   report_net -connections _11668_
+   
+   # Replacing cell
+   replace_cell _14506_ sky130_fd_sc_hd__or4_4
+   
+   # Generating custom timing report
+   report_checks -fields {net cap slew input_pins} -digits 4
+```
+Result - slack reduced
 ![Screenshot 2024-04-07 131107](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0ae684db-9376-4412-b595-ab613c83c244)
 
 ![Screenshot 2024-04-07 131150](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/72a0edc0-56a0-4bd0-bb35-7229109104f7)
 
-![Screenshot 2024-04-07 225814](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1e8f79ed-55f3-4340-ad1d-bf6ab1a2439a)
+Commands to verify instance `_14506_` is replaced with `sky130_fd_sc_hd__or4_4`
 
+```bash
+   # Generating custom timing report
+   report_checks -from _29043_ -to _30440_ -through _14506_
+```
+Screenshot of replaced instance
+![Screenshot 2024-04-07 225814](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1e8f79ed-55f3-4340-ad1d-bf6ab1a2439a)
+We started ECO fixes at wns -23.9000 and now we stand at wns -22.6173 we reduced around 1.2827 ns of violation
+
+- Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement, and cts.
+
+Now to insert this updated netlist to the PnR flow, we can use write_verilog and overwrite the synthesis netlist but before that, we are going to make a copy of the old netlist
+
+Commands to make a copy of netlist
+
+```bash
+   # Change from home directory to synthesis results directory
+   cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/
+   
+   # List contents of the directory
+   ls
+   
+   # Copy and rename the netlist
+   cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+   
+   # List contents of the directory
+   ls
+```
+Screenshot of commands run
 ![Screenshot 2024-04-07 230459](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9151b6f7-8ffa-4daf-b7eb-902b58867a1a)
 
+Commands to write verilog
+
+```bash
+   # Check syntax
+   help write_verilog
+   
+   # Overwriting current synthesis netlist
+   write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+   
+   # Exit from OpenSTA since timing analysis is done
+   exit
+```
+Screenshot of commands run
 ![Screenshot 2024-04-07 231259](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9b692062-527d-484c-8bac-40cb4bb02df4)
 
 ![Screenshot 2024-04-07 231409](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7bd7c56c-1494-4cd5-affc-4184b3875a20)
 
+Verified that the netlist is overwritten by checking that instance _14506_ is replaced with sky130_fd_sc_hd__or4_4
 ![Screenshot 2024-04-07 232758](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/39d42b79-a495-4699-bd3b-aefcd9a5ed67)
 
 Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages
