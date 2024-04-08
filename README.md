@@ -487,20 +487,23 @@ Commands to load placement def in magic in another terminal
    # Command to load the placement def in magic tool
    magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read    
    picorv32a.placement.def &
-```bash
+```
+
 Screenshot of placement def in magic
 ![Screenshot 2024-04-06 151452](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/25538310-8805-499b-b144-2b88ace99bfc)
 
 ![Screenshot 2024-04-06 151535](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e6188e19-a829-40d0-b9b4-34f43a3af6d2)
+
 Screenshot of custom inverter inserted in placement def with proper abutment
 ![Screenshot 2024-04-06 151636](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e2087d10-cd10-46ef-a5e4-c061e7391745)
+
 Command for tkcon window to view internal layers of cells
 
 ```bash
    # Command to view internal connectivity layers
    expand
 ```
-Abutment of power pins with other cell from library clearly visible
+The abutment of power pins with other cell from library clearly visible
 ![Screenshot 2024-04-06 151806](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/09aba464-d544-4d08-befb-68f19ff7c0d4)
 
 ![Screenshot 2024-04-06 151949](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c1d61609-47a8-419e-9d32-1059230b1593)
