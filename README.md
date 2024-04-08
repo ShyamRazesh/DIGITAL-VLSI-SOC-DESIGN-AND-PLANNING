@@ -489,24 +489,50 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-06 151949](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c1d61609-47a8-419e-9d32-1059230b1593)
 
+Before run the further stage, lets see cts we can get from the configuration from openlane and also cts.tcl file.
 ![cts](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b562788f-fb4c-491c-b0f0-83820777232d)
 
 ![c tcl](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/71bab7b2-16ca-4d61-ae22-046f2d1902af)
+- Do Post-Synthesis timing analysis with OpenSTA tool.
+  
+Since we are having 0 wns after improved timing run we are going to do timing analysis on initial run of synthesis which has lots of violations and no parameters were added to improve timing
 
-![Screenshot 2024-04-07 114529](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b7d943b5-a439-440f-873e-4889de1485fa)
+Commands to invoke the OpenLANE flow include new lef and perform synthesis
 
+```bash
+   # Change directory to openlane flow directory
+   cd Desktop/work/tools/openlane_working_dir/openlane
+   
+   # alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+   # Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+   docker
+   # Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+   ./flow.tcl -interactive
+   
+   # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+   package require openlane 0.9
+   
+   # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+   prep -design picorv32a
+   
+   # Adiitional commands to include newly added lef to openlane flow
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Command to set new value for SYNTH_SIZING
+   set ::env(SYNTH_SIZING) 1
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+```
+Commands run final screenshot
+Newly created `pre_sta.conf` for STA analysis in openlane directory
 ![Screenshot 2024-04-07 114617](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e91dae15-4970-47e6-9066-04705fc6f982)
 
-Newly created `pre_sta.conf` for STA analysis in openlane directory
-![Screenshot 2024-04-07 114707](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/616a2d1f-82eb-4aab-b971-f15222b5aa38)
-
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
-![Screenshot 2024-04-07 114935](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f0e42b26-0030-4196-811b-b2ecb2379211)
-
-![Screenshot 2024-04-07 114819](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e9b39a9-83fe-4647-852c-1f370c5c9e64)
-
-
+![Screenshot 2024-04-07 114529](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b7d943b5-a439-440f-873e-4889de1485fa)
 Commands to run STA in another terminal
+
 ```bash
    # Change directory to openlane
    cd Desktop/work/tools/openlane_working_dir/openlane
@@ -515,6 +541,12 @@ Commands to run STA in another terminal
    sta pre_sta.conf
 ```
 Screenshots of commands run
+![Screenshot 2024-04-07 114707](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/616a2d1f-82eb-4aab-b971-f15222b5aa38)
+
+![Screenshot 2024-04-07 114935](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f0e42b26-0030-4196-811b-b2ecb2379211)
+
+![Screenshot 2024-04-07 114819](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e9b39a9-83fe-4647-852c-1f370c5c9e64)
+
 ![Screenshot 2024-04-07 115016](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/042dd58c-7014-4b82-9b28-fdc13b2e4ede)
 
 ![Screenshot 2024-04-07 115113](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ee59e352-e755-4702-9925-e4a6603c1f3a)
