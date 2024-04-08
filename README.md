@@ -565,6 +565,42 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-07 232758](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/39d42b79-a495-4699-bd3b-aefcd9a5ed67)
 
+Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages
+
+Commands load the design and run necessary stages
+
+```bash
+   # Now once again we have to prep design so as to update variables
+   prep -design picorv32a -tag 24-03_10-03 -overwrite
+   
+   # Addiitional commands to include newly added lef to openlane flow merged.lef
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Command to set new value for SYNTH_STRATEGY
+   set ::env(SYNTH_STRATEGY) "DELAY 3"
+   
+   # Command to set new value for SYNTH_SIZING
+   set ::env(SYNTH_SIZING) 1
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+   
+   # Follwing commands are alltogather sourced in "run_floorplan" command
+   init_floorplan
+   place_io
+   tap_decap_or
+   
+   # Now we are ready to run placement
+   run_placement
+   
+   # Incase getting error
+   unset ::env(LIB_CTS)
+   
+   # With placement done we are now ready to run CTS
+   run_cts
+```
+Screenshots of commands run
 ![Screenshot 2024-04-07 233207](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e50849f9-8e70-497a-8e59-fceda61490b9)
 
 ![Screenshot 2024-04-07 233404](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1f765b74-0424-4876-b532-b5331a50487f)
@@ -589,7 +625,7 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-08 163453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d52d961a-4fc2-4a8d-a3af-1b92c98ada42)
 
-- Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
+- Explore post-CTS OpenROAD timing analysis by removing ' sky130_fd_sc_hd__clkbuf_1 ' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
   
 Commands to be run in OpenLANE flow to do OpenROAD timing analysis after changing CTS_CLK_BUFFER_LIST
 ```bash
