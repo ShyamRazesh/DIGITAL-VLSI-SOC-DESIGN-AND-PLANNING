@@ -299,64 +299,93 @@ In the run folder, we can see the connfig.tcl file. this file contains all the c
 - These switches are set in the Placementplane stage bydefault in OpenLANE.
  ![Screenshot 2024-04-02 220252](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bc6f0358-59a2-4810-b514-c7fa54e116c5)
  - Before run the Placement, we required some switches for the Placement. these we can get from the configuration from openlane.
-    
-![Screenshot 2024-04-02 220341](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a5ae278b-e4b3-4bc8-886a-d80e69215c51)
-
-- The Magic file to see actual view of standerd cells placement.And the actual view in the magic file is given below.
-  
+      
 ![p](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a41e1a83-d708-473e-9e74-3fb0673a13ee)
 
 - To run the Placement, the command is
     `run_placement`
-    
+- The Magic file to see actual view of standerd cells placement.And the actual view in the magic file is given below.  
 - Commands to load placement def in magic
      `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &`
-  
-- If we zooom into this, we can find the buffers, gates, flip flops in this.
-  
+    
 ![Screenshot 2024-04-02 224536](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e5c18ac5-f486-47c4-88cb-6622452c2edd)
 
 ![Screenshot 2024-04-02 224656](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ed624fcf-c2d4-491f-b0cf-0e937af32919)
-
+- If we zooom into this, we can find the buffers, gates, flip flops in this.
 ![Screenshot 2024-04-02 225033](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/67ec7994-57bb-4db7-85d0-4e929c7c6d0c)
-      
+- Via      
 ![Screenshot 2024-04-02 225354](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e42ecad0-704c-4356-b1bb-689ffce3067d)
-      
+- Vertical metal layer., metal 4      
 ![Screenshot 2024-04-02 225442](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/aa3616e5-1381-4d34-a7b6-b9680af7c395)
-      
+- Horizontal metal layer i.e., metal 5      
 ![Screenshot 2024-04-02 225534](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7b509b47-7e89-4bb2-927e-f6a621e9f22a)
-      
+
+## Day 3 - Design library cell using Magic Layout and ngspice characterization
+
+- Topmost cell in window picorv32a      
 ![Screenshot 2024-04-02 225940](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/73104a12-a25b-465a-b386-10f808d48fc5)
 
+Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
+
+Go to this directory to git clone the files
+ `/Desktop/work/tools/openlane_working_dir/openlane`
+ 
+Git clone the files from GitHub to your local pc
+   `git clone https://github.com/nickson-jose/vsdstdcelldesign.git`
 ![Screenshot 2024-04-03 001705](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0bfaece1-48a0-4ae2-bb9d-d8b2dbb58f74)
+open another terminal and go to the location
 
+  `/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic`
+  
+copy the sky130A.tech file from this location to the git cloned location.
 ![Screenshot 2024-04-03 002158](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a22c00a1-6b30-4825-a767-3d1bbccbb6b2)
-
+Now, we can see that this file is copied in the vsdstdcelldesign folder.
 ![Screenshot 2024-04-03 002314](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/904785bc-6228-48a2-a789-20724d1d25c1)
-
+Now initialize magic
+  `  magic -T sky130A.tech sky130_inv.mag & `
 ![Screenshot 2024-04-03 002627](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9497e5a8-4cf4-4785-b27c-93339f3d417d)
 
+In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the
+metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
+- Inverter layout
 ![Screenshot 2024-04-03 002733](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bf1ee59b-946f-404a-93da-0699b61589bd)
 
 ![Screenshot 2024-04-03 003136](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f848da20-282e-48e4-a63a-1fb90aeb2d8c)
-
+- nmos
 ![Screenshot 2024-04-03 003303](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/92c2b2b3-3d9a-4edf-bd1e-e675210b3563)
 
+ we will check for the output terminal also.(by double pressing "S" to select the entire thing at output Y).
+  so, we can see that "Y" is attached to locali in cell def sky130_inv.
+we can check the source of the PMOS is connected to the ground or not. and similarly we can check it for NMOS also.
 ![Screenshot 2024-04-03 003759](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9f8d39be-4e0c-43b0-aca0-5fb56df46113)
 
+- Connection between source and VDD in Pmos
 ![Screenshot 2024-04-03 003854](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f04c1791-c9cb-4f92-8e89-b51260f84c37)
 
+- Connection between source and Ground in Nmos
 ![Screenshot 2024-04-03 003938](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/766c98b8-ed95-479f-a8ad-31bf4cd757cb)
 
+Now open the tkcon window and type the commands for extracting the files. Bute before that see lets see its location
+
+     ```bash  
+        pwd
+     ```   
+To extract the file from here, we have to write the command in tckon window and the comand is `extract all`
 ![Screenshot 2024-04-03 004306](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/95b54116-8561-49b3-952c-a20f206303e9)
 
+we will use this .ext file to create the spice file to be use with our ngspice tool. for that we have apply the command `ext2spice cthresh 0 rthresh 0`,this will not create anything new.
+now again we have to type `ext2spice` command in tckon window.
 ![Screenshot 2024-04-03 004650](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ea00f51b-ff01-47a6-8e58-4f97bb40a8a2)
 
+so, now we are checking the location and at there spice file has been created.
 ![Screenshot 2024-04-03 004729](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5140209-0503-4f61-9217-6371237f721e)
 
+let's see what inside the spice file by "vim sky130_inv.spice".
 ![Screenshot 2024-04-03 005032](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f79b84f1-2371-40cc-853b-a56ffe985850)
-  
+
 ![Screenshot 2024-04-04 153800](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5ef356eb-c8cd-46fa-839f-2e613b722506)
+
+![Screenshot 2024-04-08 153747](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/06df880d-8dc4-488a-99f6-2c16461b3bba)
 
 ![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
 
