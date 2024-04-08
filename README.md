@@ -386,9 +386,11 @@ now again we have to type `ext2spice` command in tckon window.
 so, now we are checking the location and at there spice file has been created.
 ![Screenshot 2024-04-03 004729](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5140209-0503-4f61-9217-6371237f721e)
 
-let's see what inside the spice file by "vim sky130_inv.spice".
+let's see what is inside the spice file by "vim sky130_inv.spice".
 ![Screenshot 2024-04-03 005032](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f79b84f1-2371-40cc-853b-a56ffe985850)
-
+Now we have to include the PMOS and NMOS lib files. it is inside the libs folder in the vsdstdcellsdesign folder.
+![Screenshot 2024-04-08 161011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/92f8f506-beb9-49b3-abe9-d4ba067e633a)
+let's see inside PMOS lib file.
 ![Screenshot 2024-04-04 153800](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5ef356eb-c8cd-46fa-839f-2e613b722506)
 Measuring unit distance in layout grid
 ![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
@@ -406,6 +408,9 @@ To plot the graph between Voltage and time type the command in ngspice
 after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-06 002259](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c88402b-5401-4b30-b3b5-09b4b9c10788)
 
+- Transient response output V = 3.3v
+   80% of V is 2.64v
+   20% of V is 0.65v
 ![Screenshot 2024-04-06 002339](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7dfd5fad-be9e-4029-bb45-bdbaae1bda18)
 
 ![Screenshot 2024-04-06 003511](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a750f5cc-6246-4856-b00a-53465b1c0888)
