@@ -1048,9 +1048,12 @@ Screenshots of routed def
 ![Screenshot 2024-04-08 222615](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/470a7bf1-0db0-41e3-8925-04f68886ee79)
 
 
-
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/01-04_19-21/tmp/routing` directory
 ![Screenshot 2024-04-08 223242](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/dba0a2da-3d11-4b52-997e-bd89de810d20)
+
+![Screenshot 2024-04-09 101927](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3ee612db-bbdd-4b21-99e5-0cb9116c127b)
+
+![Screenshot 2024-04-09 101854](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ec4475ec-4c25-4a45-a432-44649582657f)
 
 
 
