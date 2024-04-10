@@ -443,7 +443,9 @@ Fix up small DRC errors and verify the design is ready to be inserted into our f
 Conditions to be verified before moving forward with custom designed cell layout:
 
 Condition 1: The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
+
 Condition 2: Width of the standard cell should be odd multiples of the horizontal track pitch.
+
 Condition 3: Height of the standard cell should be even multiples of the vertical track pitch.
 
 Commands to open the custom inverter layout
@@ -497,8 +499,6 @@ Screenshot of command run
 
 Screenshot of newly created lef file
 ![Screenshot 2024-04-06 010449](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bc8cd182-4f06-4770-b83a-37ea9d10c2f8)
-
-![Screenshot 2024-04-06 010646](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4394d68e-b013-41dd-9722-98ffff5633b9)
 
 Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
 Commands to copy necessary files to 'picorv32a' design 'src' directory
@@ -563,14 +563,47 @@ Screenshots of commands run
 ![Screenshot 2024-04-06 143302](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2f7e5949-32c1-4f85-835e-569ea079976c)
 
 ![Screenshot 2024-04-06 145505](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d4b7ab17-dedc-4c6b-982a-13843d6c2de8)
+
+![Screenshot 2024-04-06 145607](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/180134f8-7459-43b1-9e30-5c3817b5d2eb)
 -Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
 Noting down current design values generated before modifying parameters to improve timing
-![Screenshot 2024-04-06 145607](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/180134f8-7459-43b1-9e30-5c3817b5d2eb)
-
 ![Screenshot 2024-04-06 145825](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9cf64b34-5ff0-4804-9766-82f01452a56c)
 
 ![Screenshot 2024-04-06 150235](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/12fa6efb-a1d1-44f3-93e9-a9477df95920)
+Commands to view and change parameters to improve timing and run synthesis
+
+```bash
+   # Now once again we have to prep design so as to update variables
+   prep -design picorv32a -tag 24-03_10-03 -overwrite
+   
+   # Addiitional commands to include newly added lef to openlane flow merged.lef
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Command to display current value of variable SYNTH_STRATEGY
+   echo $::env(SYNTH_STRATEGY)
+   
+   # Command to set new value for SYNTH_STRATEGY
+   set ::env(SYNTH_STRATEGY) "DELAY 3"
+   
+   # Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+   echo $::env(SYNTH_BUFFERING)
+   
+   # Command to display current value of variable SYNTH_SIZING
+   echo $::env(SYNTH_SIZING)
+   
+   # Command to set new value for SYNTH_SIZING
+   set ::env(SYNTH_SIZING) 1
+   
+   # Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+   echo $::env(SYNTH_DRIVING_CELL)
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+```
+Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
+![Screenshot 2024-04-06 010646](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4394d68e-b013-41dd-9722-98ffff5633b9)
 
 ![Screenshot 2024-04-06 150401](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1e48c44c-38a7-4102-8dff-8c6fa7ebcd9f)
 
