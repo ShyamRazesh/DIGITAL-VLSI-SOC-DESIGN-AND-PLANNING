@@ -1,6 +1,5 @@
 # DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING
 
-{ "schemaVersion": 1, "label": "OS", "message": "Linux", "color": "orange" }
 
 ## Contents
 <div class="toc">
