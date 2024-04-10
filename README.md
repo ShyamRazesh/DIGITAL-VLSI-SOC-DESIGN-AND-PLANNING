@@ -70,7 +70,7 @@ The above list of tools shows that, many different tools are required for variou
 - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
 - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
 
-## Created a VM on my laptop.
+# Created a VM on my laptop.
 ![Screenshot 2024-04-10 121518](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7c8c315e-fbb4-42f0-9259-68228ead6410)
 
 # <h1 id="header-1">Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK</h1>	 
@@ -512,6 +512,7 @@ Rise propagation delay = Time taken for output to rise to 50% - Time taken for i
 # <h4 id="header-4">Day 4- Pre-layout timing analysis and importance of good clock tree</h4>                         
 
 ## Theory
+
 ## Implementation
 1. Fix up small DRC errors and verify the design is ready to be inserted into our flow.
 2. Save the finalized layout with custom name and open it.
@@ -1208,9 +1209,10 @@ Screenshots of commands run and timing report generated
 ![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
 
 
-# <h5 id="header-5"> Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</h5>	 
+## <h5 id="header-5"> Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</h5>
 
 ## Theory
+
 ## Implementation
 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
 2. Perfrom detailed routing using TritonRoute.
