@@ -353,8 +353,8 @@ Now initialize magic
   `  magic -T sky130A.tech sky130_inv.mag & `
 ![Screenshot 2024-04-03 002627](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9497e5a8-4cf4-4785-b27c-93339f3d417d)
 
-In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the
-metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
+In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
+
 - Inverter layout
 ![Screenshot 2024-04-03 002733](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bf1ee59b-946f-404a-93da-0699b61589bd)
 
@@ -364,7 +364,9 @@ metal 2 is shown by pink color. N-well is shown by solide das line. green is N-d
 ![Screenshot 2024-04-03 003303](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/92c2b2b3-3d9a-4edf-bd1e-e675210b3563)
 
  we will check for the output terminal also.(by double pressing "S" to select the entire thing at output Y).
+ 
   so, we can see that "Y" is attached to locali in cell def sky130_inv.
+  
 we can check the source of the PMOS is connected to the ground or not. and similarly we can check it for NMOS also.
 ![Screenshot 2024-04-03 003759](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9f8d39be-4e0c-43b0-aca0-5fb56df46113)
 
@@ -375,11 +377,15 @@ we can check the source of the PMOS is connected to the ground or not. and simil
 ![Screenshot 2024-04-03 003938](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/766c98b8-ed95-479f-a8ad-31bf4cd757cb)
 
 Now open the tkcon window and type the commands for extracting the files. Bute before that see lets see its location 
+
         `pwd`  
+        
 To extract the file from here, we have to write the command in tckon window and the comand is `extract all`
 ![Screenshot 2024-04-03 004306](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/95b54116-8561-49b3-952c-a20f206303e9)
 
-we will use this .ext file to create the spice file to be use with our ngspice tool. for that we have apply the command `ext2spice cthresh 0 rthresh 0`,this will not create anything new.
+we will use this .ext file to create the spice file to be use with our ngspice tool. for that we have apply the command `ext2spice cthresh 0 rthresh 0`,
+this will not create anything new.
+
 now again we have to type `ext2spice` command in tckon window.
 ![Screenshot 2024-04-03 004650](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ea00f51b-ff01-47a6-8e58-4f97bb40a8a2)
 
@@ -388,10 +394,13 @@ so, now we are checking the location and at there spice file has been created.
 
 let's see what is inside the spice file by "vim sky130_inv.spice".
 ![Screenshot 2024-04-03 005032](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f79b84f1-2371-40cc-853b-a56ffe985850)
+
 Now we have to include the PMOS and NMOS lib files. it is inside the libs folder in the vsdstdcellsdesign folder.
 ![Screenshot 2024-04-08 161011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/92f8f506-beb9-49b3-abe9-d4ba067e633a)
+
 let's see inside PMOS lib file.
 ![Screenshot 2024-04-04 153800](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5ef356eb-c8cd-46fa-839f-2e613b722506)
+
 Measuring unit distance in layout grid
 ![Screenshot 2024-04-05 185633](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/6838aa04-32bd-4036-b4d7-4cb5740149e7)
 
@@ -409,6 +418,7 @@ after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-06 002259](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5c88402b-5401-4b30-b3b5-09b4b9c10788)
 
 - Transient response output V = 3.3v
+  
    80% of V is 2.64v
   
    20% of V is 0.65v
@@ -459,6 +469,7 @@ Screenshot of commands run
 ![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
 
 Save the finalized layout with custom name and open it.
+
 Command for tkcon window to save the layout with custom name
 
 ```bash
@@ -474,6 +485,7 @@ Screenshot of newly saved layout
 
 ![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
  Generate lef from the layout.
+ 
 Command for tkcon window to write lef
 
 ```bash
@@ -507,13 +519,9 @@ Commands to copy necessary files to 'picorv32a' design 'src' directory
 Screenshot of commands run
 ![Screenshot 2024-04-06 011114](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8d7323ce-f036-4a6f-83dd-f00da617b8de)
 
-![Screenshot 2024-04-06 011144](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f3b343fe-1277-4d30-80a0-4dc44d2be1ef)
-
 ![Screenshot 2024-04-06 011431](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/380a7f32-5a4f-4e02-a08b-9ad07a7f1378)
 
 ![Screenshot 2024-04-06 011553](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e663d62f-d18a-471a-8748-c8d6525a93de)
-
-![Screenshot 2024-04-06 012239](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/57b5c278-46e4-42fa-9f70-61d88b5e8a37)
 
 ![Screenshot 2024-04-06 012239](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/03c81be0-6b6c-430a-9cd2-b753d7321f37)
 
@@ -521,6 +529,33 @@ Screenshot of commands run
 
 ![Screenshot 2024-03-31 215317](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/aae4c69d-5bf1-4d03-bb60-a8443886ade1)
 
+![Screenshot 2024-04-10 103128](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5dc87581-b07d-4770-b3d0-40848364ccd4)
+ Run openlane flow synthesis with newly inserted custom inverter cell.
+Commands to invoke the OpenLANE flow include new lef and perform synthesis
+```bash
+   # Change directory to openlane flow directory
+   cd Desktop/work/tools/openlane_working_dir/openlane
+   
+   # alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+   # Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+   docker
+   # Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+   ./flow.tcl -interactive
+   
+   # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+   package require openlane 0.9
+   
+   # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+   prep -design picorv32a
+   
+   # Adiitional commands to include newly added lef to openlane flow
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
+   
+   # Now that the design is prepped and ready, we can run synthesis using following command
+   run_synthesis
+```
+Screenshots of commands run
 ![Screenshot 2024-04-06 014555](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/23a4c539-317b-49b0-b69e-890573a57b35)
 
 ![Screenshot 2024-04-06 142503](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bfa6c5df-ae6f-4fd0-86f4-719fb9752304)
@@ -528,7 +563,9 @@ Screenshot of commands run
 ![Screenshot 2024-04-06 143302](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/2f7e5949-32c1-4f85-835e-569ea079976c)
 
 ![Screenshot 2024-04-06 145505](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d4b7ab17-dedc-4c6b-982a-13843d6c2de8)
+-Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
+Noting down current design values generated before modifying parameters to improve timing
 ![Screenshot 2024-04-06 145607](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/180134f8-7459-43b1-9e30-5c3817b5d2eb)
 
 ![Screenshot 2024-04-06 145825](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9cf64b34-5ff0-4804-9766-82f01452a56c)
