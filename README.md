@@ -438,6 +438,7 @@ Rise transition time = Time taken for output to rise from 80% - Time taken for o
 ![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
 
 ![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
+
 Rise propagation delay = Time taken for output to rise to 50% - Time taken for input to fall to 50%
                        = 2.2113 ns - 2.15 ns
                        =  0.0613 ns
@@ -447,9 +448,7 @@ Rise propagation delay = Time taken for output to rise to 50% - Time taken for i
                         =  0.0275 ns 
                         
 ## Section 4 - Pre-layout timing analysis and importance of good clock tree
-
 Fix up small DRC errors and verify the design is ready to be inserted into our flow.
-
 Conditions to be verified before moving forward with custom designed cell layout:
 
 Condition 1: The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
