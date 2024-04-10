@@ -424,7 +424,7 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
 
-![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
+![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
 
 ## Section 4 - Pre-layout timing analysis and importance of good clock tree
 
@@ -458,7 +458,7 @@ Commands for tkcon window to set grid as tracks of locali layer
 Screenshot of commands run
 ![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
 
-![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
+![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
 
 ![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
 
