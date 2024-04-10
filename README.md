@@ -73,7 +73,7 @@ The above list of tools shows that, many different tools are required for variou
 # Created a VM on my laptop.
 ![Screenshot 2024-04-10 121518](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7c8c315e-fbb4-42f0-9259-68228ead6410)
 
-## Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK
+# <h1 id="header-1">Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK</h1>	 
 
 ## Digital ASIC Design
 
@@ -237,7 +237,7 @@ The synthesis Results are found in the directory
     ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/synthesis/picorv32a.synthesis.v
   ```
 
- ## Day 2- Good floorplan vs bad floorplan and introduction to library cells
+# <h2 id="header-2">Day 2- Good floorplan vs bad floorplan and introduction to library cells</h2>	 
    
 ## Theory
 ## Implementation
@@ -366,7 +366,7 @@ To see the actual layout after the flow, we have to open the magic file by addin
 - Horizontal metal layer i.e., metal 5      
 ![Screenshot 2024-04-02 225534](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7b509b47-7e89-4bb2-927e-f6a621e9f22a)
 
-## Day 3- Design library cell using Magic Layout and ngspice characterization
+# <h3 id="header-3"> Day 3- Design library cell using Magic Layout and ngspice characterization</h3>	 
 
 ## Theory
 ## Implementation
@@ -504,7 +504,7 @@ Rise propagation delay = Time taken for output to rise to 50% - Time taken for i
                         = 4.07806 ns - 4.05056 ns
                         =  0.0275 ns 
                         
-## Day 4- Pre-layout timing analysis and importance of good clock tree
+## <h4 id="header-4">Day 4- Pre-layout timing analysis and importance of good clock tree</h4>                         
 
 ## Theory
 ## Implementation
@@ -1202,7 +1202,8 @@ Screenshots of commands run and timing report generated
 
 ![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
 
-## Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
+# <h5 id="header-5"> Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</h5>	 
+
 ## Theory
 ## Implementation
 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
