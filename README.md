@@ -417,12 +417,6 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-06 004214](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fea69f33-08bf-49e5-8a08-6c2e8912f6a3)
 
-![Screenshot 2024-04-06 004138](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/528a5661-6598-4a36-8d28-51943b112092)
-
-![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
-
-![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
-
 ![Screenshot 2024-04-06 154821](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/639eea30-56d0-438d-9cfa-a4b61377cb2e)
 
 ![Screenshot 2024-04-06 154939](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b41cdc3e-adb9-4768-a378-077c102b70c4)
@@ -432,6 +426,12 @@ after running this file we get output of ngspice like this,
 ![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
 
 ![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
+
+![Screenshot 2024-04-06 004138](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/528a5661-6598-4a36-8d28-51943b112092)
+
+![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
+
+![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
 
 ![Screenshot 2024-04-06 010332](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/23e5496d-b772-43d3-8749-30225e796455)
 
