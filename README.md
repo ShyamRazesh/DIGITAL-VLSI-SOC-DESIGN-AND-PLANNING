@@ -1,9 +1,34 @@
 # DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING
+## Contents
+<div class="toc">
+  <ul>
+    <li><a href="#header-1">Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK</a></li>
+</div>  
+     
+<div class="toc">
+  <ul>
+    <li><a href="#header-2">Day 2- Good floorplan vs bad floorplan and introduction to library cells</a></li> 
+</div>
+     
+<div class="toc">
+  <ul>
+    <li><a href="#header-3">Day 3- Design library cell using Magic Layout and ngspice characterization</a></li>
+</div>
 
-Author: Srinivasa Yashwanth
+<div class="toc">
+  <ul>
+    <li><a href="#header-4">Day 4- Pre-layout timing analysis and importance of good clock tree</a></li>
+</div>
+
+<div class="toc">
+  <ul>
+    <li><a href="#header-5">Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</a></li>
+</div>
+     
+Author: Shyam Razesh
 
 Acknowledgements: SoC design Program by [Mr. Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836) , [VLSI System Design](https://www.vlsisystemdesign.com)
-
+     
 ## OpenSource Physical Design
 This repository contains all the information studied and created during the [Advanced Physical Design Using OpenLANE / SKY130](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop. It is primarily foucused on a complete RTL2GDS flow using the open-soucre flow named OpenLANE. [PICORV32A](https://github.com/YosysHQ/picorv32) RISC-V core design is used for the purpose.
 
@@ -209,15 +234,14 @@ The synthesis Results are found in the directory
  ## Day 2- Good floorplan vs bad floorplan and introduction to library cells
    
 ## Theory
-
 ## Implementation
-Section 2 tasks:-
 
 1. Run 'picorv32a' design floorplan using OpenLANE flow and generate necessary outputs.
 2. Calculate the die area in microns from the values in floorplan def.
 3. Load generated floorplan def in magic tool and explore the floorplan.
 4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
 5. Load generated placement def in magic tool and explore the placement.
+   
    ![Screenshot 2024-04-10 113003](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/60bc2880-8934-4af9-a2a5-cf24b09a0e66)
 
 - All section 2 logs, reports and results can be found in following run folder:
@@ -1129,7 +1153,7 @@ Screenshots of commands run and timing report generated
 
 ![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
 
-## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA
+## Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
 ## Theory
 ## Implementation
 1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
