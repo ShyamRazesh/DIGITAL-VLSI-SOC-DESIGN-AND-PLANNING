@@ -195,21 +195,20 @@ RTL2GDS Flow
 The Synthesis Report are found in the directory
       
  ![Screenshot 2024-03-31 231746](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/264ac2e8-72f6-4d88-b0d7-0c971ab2b6d9)
-
-      
-      ```bash
-         ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/reports/synthesis/1-yosys_4.stat.rpt
-      ```
+ 
+ ```bash
+  ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/reports/synthesis/1-yosys_4.stat.rpt
+ ```
       
 The synthesis Results are found in the directory
          
-         ```bash
-         ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/synthesis/picorv32a.synthesis.v
-         ```
+ ```bash
+    ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/synthesis/picorv32a.synthesis.v
+  ```
 
  ## Day2 Good floorplan vs bad floorplan and introduction to library cells
    
- ## Floorplanning and Intro to Library Cells
+ - Floorplanning and Intro to Library Cells
 
  The LAB gives the complete flow of the Floorplanning and the placement process
  After the Synthesis process, type the command for running the Floor planning
@@ -261,10 +260,10 @@ In the run folder, we can see the connfig.tcl file. this file contains all the c
       
    Locate to this directory
    
-     ```bash 
-        ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/floorplan
-     ```   
-  To see the actual layout after the flow, we have to open the magic file by adding the command   `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef 
+ ```bash 
+    ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/floorplan
+  ```   
+To see the actual layout after the flow, we have to open the magic file by adding the command   `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef 
   read ../../tmp/merged.lef def read picorv32a.floorplan.def &`   
 
 - Floorplan def in Magic
@@ -303,7 +302,9 @@ In the run folder, we can see the connfig.tcl file. this file contains all the c
 
  To run the Placement, the command is
     `run_placement`
-  The Magic file to see actual view of standerd cells placement.And the actual view in the magic file is given below.  
+    
+  The Magic file to see actual view of standerd cells placement.And the actual view in the magic file is given below.
+  
   Commands to load placement def in magic
      `magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &`
     
@@ -425,14 +426,16 @@ after running this file we get output of ngspice like this,
 -80% value
 ![Screenshot 2024-04-06 154821](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/639eea30-56d0-438d-9cfa-a4b61377cb2e)
  Fall transition time = Time taken for output to fall from 20% - Time taken for output to fall from 80%
-                 = 4.09511 ns - 4.05263 ns
-                 =  0.04248 ns
+
+                      = 4.09511 ns - 4.05263 ns
+                      =  0.04248 ns
   
 -20% value
 ![Screenshot 2024-04-06 154939](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b41cdc3e-adb9-4768-a378-077c102b70c4)
 Rise transition time = Time taken for output to rise from 80% - Time taken for output to rise from 20%
-                 = 2.4577 ns - 2.182 ns
-                 =  0.06377 ns
+
+                     = 2.4577 ns - 2.182 ns
+                     =  0.06377 ns
   
  -20% value 
 ![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
@@ -440,10 +443,12 @@ Rise transition time = Time taken for output to rise from 80% - Time taken for o
 ![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
 
 Rise propagation delay = Time taken for output to rise to 50% - Time taken for input to fall to 50%
+
                        = 2.2113 ns - 2.15 ns
                        =  0.0613 ns
                        
  Fall propagation delay = Time taken for output to fall to 50% - Time taken for input to rise to 50%
+ 
                         = 4.07806 ns - 4.05056 ns
                         =  0.0275 ns 
                         
