@@ -136,7 +136,7 @@ RTL2GDS Flow
    
    ## Interactive Mode
    
-       To open the openlane in interactive mode,
+   To open the openlane in interactive mode,
    
     ![Screenshot 2024-03-31 201104](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ef2765ef-0632-4b26-87df-4f5981438323)
    
