@@ -42,7 +42,7 @@ The above list of tools shows that, many different tools are required for variou
 - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
 - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
 
-## Day-1 Inception of open-source EDA, OpenLANE and Sky130 PDK
+## Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK
 
 ## Digital ASIC Design
 
@@ -206,10 +206,22 @@ The synthesis Results are found in the directory
     ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-04_19-21/results/synthesis/picorv32a.synthesis.v
   ```
 
- ## Day2 Good floorplan vs bad floorplan and introduction to library cells
+ ## Day 2- Good floorplan vs bad floorplan and introduction to library cells
    
- - Floorplanning and Intro to Library Cells
+## Theory
 
+## Implementation
+Section 2 tasks:-
+
+1. Run 'picorv32a' design floorplan using OpenLANE flow and generate necessary outputs.
+2. Calculate the die area in microns from the values in floorplan def.
+3. Load generated floorplan def in magic tool and explore the floorplan.
+4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
+5. Load generated placement def in magic tool and explore the placement.
+   ![Screenshot 2024-04-10 113003](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/60bc2880-8934-4af9-a2a5-cf24b09a0e66)
+
+- All section 2 logs, reports and results can be found in following run folder:
+   
  The LAB gives the complete flow of the Floorplanning and the placement process
  After the Synthesis process, type the command for running the Floor planning
      
@@ -324,7 +336,7 @@ To see the actual layout after the flow, we have to open the magic file by addin
 - Horizontal metal layer i.e., metal 5      
 ![Screenshot 2024-04-02 225534](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7b509b47-7e89-4bb2-927e-f6a621e9f22a)
 
-## Day 3 - Design library cell using Magic Layout and ngspice characterization
+## Day 3- Design library cell using Magic Layout and ngspice characterization
 
 - Topmost cell in window picorv32a      
 ![Screenshot 2024-04-02 225940](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/73104a12-a25b-465a-b386-10f808d48fc5)
@@ -452,7 +464,7 @@ Rise propagation delay = Time taken for output to rise to 50% - Time taken for i
                         = 4.07806 ns - 4.05056 ns
                         =  0.0275 ns 
                         
-## Section 4 - Pre-layout timing analysis and importance of good clock tree
+## Day 4- Pre-layout timing analysis and importance of good clock tree
 Fix up small DRC errors and verify the design is ready to be inserted into our flow.
 Conditions to be verified before moving forward with custom designed cell layout:
 
