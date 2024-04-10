@@ -410,6 +410,7 @@ after running this file we get output of ngspice like this,
 
 - Transient response output V = 3.3v
    80% of V is 2.64v
+  
    20% of V is 0.65v
 ![Screenshot 2024-04-06 002339](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7dfd5fad-be9e-4029-bb45-bdbaae1bda18)
 
@@ -423,13 +424,41 @@ after running this file we get output of ngspice like this,
 
 ![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
 
-![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
-
 ![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
 
+## Section 4 - Pre-layout timing analysis and importance of good clock tree
+
+Fix up small DRC errors and verify the design is ready to be inserted into our flow.
+
+Conditions to be verified before moving forward with custom designed cell layout:
+
+Condition 1: The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
+Condition 2: Width of the standard cell should be odd multiples of the horizontal track pitch.
+Condition 3: Height of the standard cell should be even multiples of the vertical track pitch.
+
+Commands to open the custom inverter layout
+```bash
+   # Change directory to vsdstdcelldesign
+   cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+   
+   # Command to open custom inverter layout in magic
+   magic -T sky130A.tech sky130_inv.mag &
+```
+Screenshot of tracks.info of sky130_fd_sc_hd
 ![Screenshot 2024-04-06 004138](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/528a5661-6598-4a36-8d28-51943b112092)
 
+Commands for tkcon window to set grid as tracks of locali layer
+```bash
+   # Get syntax for grid command
+   help grid
+   
+   # Set grid values accordingly
+   grid 0.46um 0.34um 0.23um 0.17um
+```
+Screenshot of commands run
 ![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
+
+![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
 
 ![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
 
