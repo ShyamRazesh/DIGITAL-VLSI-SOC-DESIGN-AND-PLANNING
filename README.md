@@ -420,19 +420,32 @@ after running this file we get output of ngspice like this,
   
    20% of V is 0.65v
 ![Screenshot 2024-04-06 002339](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7dfd5fad-be9e-4029-bb45-bdbaae1bda18)
-
+-80% value
 ![Screenshot 2024-04-06 003511](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/a750f5cc-6246-4856-b00a-53465b1c0888)
-
-![Screenshot 2024-04-06 004214](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fea69f33-08bf-49e5-8a08-6c2e8912f6a3)
-
+-80% value
 ![Screenshot 2024-04-06 154821](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/639eea30-56d0-438d-9cfa-a4b61377cb2e)
-
+ Fall transition time = Time taken for output to fall from 20% - Time taken for output to fall from 80%
+                 = 4.09511 ns - 4.05263 ns
+                 =  0.04248 ns
+  
+-20% value
 ![Screenshot 2024-04-06 154939](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b41cdc3e-adb9-4768-a378-077c102b70c4)
-
+Rise transition time = Time taken for output to rise from 80% - Time taken for output to rise from 20%
+                 = 2.4577 ns - 2.182 ns
+                 =  0.06377 ns
+  
+ -20% value 
 ![Screenshot 2024-04-06 155011](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2e2b1a5-9980-47d0-90e1-1fa05a03c6c8)
 
 ![Screenshot 2024-04-06 155121](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9a4f5476-4b14-4abf-ac17-049f0a5c1962)
-
+Rise propagation delay = Time taken for output to rise to 50% - Time taken for input to fall to 50%
+                       = 2.2113 ns - 2.15 ns
+                       =  0.0613 ns
+                       
+ Fall propagation delay = Time taken for output to fall to 50% - Time taken for input to rise to 50%
+                        = 4.07806 ns - 4.05056 ns
+                        =  0.0275 ns 
+                        
 ## Section 4 - Pre-layout timing analysis and importance of good clock tree
 
 Fix up small DRC errors and verify the design is ready to be inserted into our flow.
