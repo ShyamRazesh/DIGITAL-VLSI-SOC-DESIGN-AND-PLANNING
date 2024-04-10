@@ -604,15 +604,38 @@ Commands to view and change parameters to improve timing and run synthesis
 ```
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
 ![Screenshot 2024-04-06 010646](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4394d68e-b013-41dd-9722-98ffff5633b9)
+-Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
 
+Now that our custom inverter is properly accepted in synthesis we can now run floorplan using following command
+
+```bash
+   # Now we can run floorplan
+   run_floorplan
+```
+Screenshots of command run
 ![Screenshot 2024-04-06 150401](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/1e48c44c-38a7-4102-8dff-8c6fa7ebcd9f)
 
+Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on Floorplan Commands section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
+
+```bash
+# Follwing commands are alltogather sourced in "run_floorplan" command
+init_floorplan
+place_io
+tap_decap_or
+```
+Screenshots of commands run
 ![Screenshot 2024-04-06 150453](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/facab920-65c4-4c05-8588-0fb7fdf71014)
 
 ![Screenshot 2024-04-06 150531](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f2a7baba-dd6b-4c26-8e7d-ccf44b2712e6)
 
 ![Screenshot 2024-04-06 150629](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/0b97be34-b66d-4e78-8ce9-1a8583b90e52)
+Now that floorplan is done we can do placement using following command
 
+```bash
+   # Now we are ready to run placement
+   run_placement
+```
+Screenshots of command run
 ![Screenshot 2024-04-06 150814](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c746d413-06d4-4b70-a110-ef4de1ceca8f)
 Commands to load placement def in magic in another terminal
 
