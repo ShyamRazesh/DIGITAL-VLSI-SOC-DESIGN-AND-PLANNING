@@ -160,12 +160,9 @@ RTL2GDS Flow
 
  ### Synthesis
    
- To run the Synthesis
-   
-    ```bash
-       run_synthesis
-    ```
-   
+ To run the Synthesis the cmd i.e,
+     ` run_synthesis`
+    
    ![Screenshot 2024-03-31 220804](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/e9199ee6-71ee-46e0-829a-e0b36a9e4dbe)
          
  ## Report generated after synthesis
