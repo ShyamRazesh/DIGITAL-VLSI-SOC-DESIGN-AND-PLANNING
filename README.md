@@ -458,16 +458,53 @@ Commands for tkcon window to set grid as tracks of locali layer
 Screenshot of commands run
 ![Screenshot 2024-04-06 004913](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fc739aad-bd22-47a8-9687-0958ca2ad199)
 
+Save the finalized layout with custom name and open it.
+Command for tkcon window to save the layout with custom name
+
+```bash
+   # Command to save as
+   save sky130_vsdinv.mag
+   Command to open the newly saved layout
+   
+   # Command to open custom inverter layout in magic
+   magic -T sky130A.tech sky130_vsdinv.mag &
+```
+Screenshot of newly saved layout
 ![Screenshot 2024-04-06 005559](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7e3521ff-063b-452e-9760-227053aaa747)
 
 ![Screenshot 2024-04-06 005056](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/19e84e70-45ae-45d0-996a-028a46e0281f)
+ Generate lef from the layout.
+Command for tkcon window to write lef
 
+```bash
+   # lef command
+   lef write
+```
+Screenshot of command run
 ![Screenshot 2024-04-06 010332](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/23e5496d-b772-43d3-8749-30225e796455)
 
+Screenshot of newly created lef file
 ![Screenshot 2024-04-06 010449](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bc8cd182-4f06-4770-b83a-37ea9d10c2f8)
 
 ![Screenshot 2024-04-06 010646](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/4394d68e-b013-41dd-9722-98ffff5633b9)
 
+Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
+Commands to copy necessary files to 'picorv32a' design 'src' directory
+
+```bash
+   # Copy lef file
+   cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+   
+   # List and check whether it's copied
+   ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+   
+   # Copy lib files
+   cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+   
+   # List and check whether it's copied
+   ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+```
+Screenshot of commands run
 ![Screenshot 2024-04-06 011114](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8d7323ce-f036-4a6f-83dd-f00da617b8de)
 
 ![Screenshot 2024-04-06 011144](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/f3b343fe-1277-4d30-80a0-4dc44d2be1ef)
