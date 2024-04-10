@@ -338,10 +338,20 @@ To see the actual layout after the flow, we have to open the magic file by addin
 
 ## Day 3- Design library cell using Magic Layout and ngspice characterization
 
+## Theory
+## Implementation
+1.Clone custom inverter standard cell design from github repository: [Standard cell design and characterization using OpenLANE flow.](https://github.com/nickson-jose/vsdstdcelldesign)
+2.Load the custom inverter layout in magic and explore.
+3.Spice extraction of inverter in magic.
+4.Editing the spice model file for analysis through simulation.
+5.Post-layout ngspice simulations.
+6.Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
+
 - Topmost cell in window picorv32a      
 ![Screenshot 2024-04-02 225940](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/73104a12-a25b-465a-b386-10f808d48fc5)
 
-Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
+Every Design is represented by an equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. 
+To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
 
 Go to this directory to git clone the files
  `/Desktop/work/tools/openlane_working_dir/openlane`
@@ -465,7 +475,24 @@ Rise propagation delay = Time taken for output to rise to 50% - Time taken for i
                         =  0.0275 ns 
                         
 ## Day 4- Pre-layout timing analysis and importance of good clock tree
-Fix up small DRC errors and verify the design is ready to be inserted into our flow.
+
+## Theory
+## Implementation
+1. Fix up small DRC errors and verify the design is ready to be inserted into our flow.
+2. Save the finalized layout with custom name and open it.
+3. Generate lef from the layout.
+4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
+5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
+6. Run openlane flow synthesis with newly inserted custom inverter cell.
+7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
+8. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
+9. Do Post-Synthesis timing analysis with OpenSTA tool.
+10. Make timing ECO fixes to remove all violations.
+11. Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
+12. Post-CTS OpenROAD timing analysis.
+13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
+    
+-Fix up small DRC errors and verify the design is ready to be inserted into our flow.
 Conditions to be verified before moving forward with custom designed cell layout:
 
 Condition 1: The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
@@ -1103,8 +1130,14 @@ Screenshots of commands run and timing report generated
 ![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
 
 ## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA
+## Theory
+## Implementation
+1. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
+2. Perfrom detailed routing using TritonRoute.
+4. Post-Route parasitic extraction using SPEF extractor.
+5. Post-Route OpenSTA timing analysis with the extracted parasitics of the route.
+6. Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
 
-Perform generation of Power Distribution Network (PDN) and explore the PDN layout.
 Commands to perform all necessary stages up until now
 ```bash
    # Change directory to openlane flow directory
@@ -1193,7 +1226,7 @@ If one wants to learn about the various switches available for routing, they can
 By executing specific commands, we can determine the type of global and detailed routing that will be performed.
 In case we want to change the routing type, we can use the `set` command followed by the parameter names mentioned in the routing section of the README.md file.
 
-## Perform detailed routing using TritonRoute and explore the routed layout.
+-Perform detailed routing using TritonRoute and explore the routed layout.
 Command to perform routing
 
       ```bash
