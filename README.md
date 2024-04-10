@@ -24,10 +24,11 @@
   <ul>
     <li><a href="#header-5">Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</a></li>
 </div>
+
      
 Author: Shyam Razesh
 
-Acknowledgements: SoC design Program by [Mr. Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836) , [VLSI System Design](https://www.vlsisystemdesign.com)
+Acknowledgments: SoC design Program by [Mr. Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836) , [VLSI System Design](https://www.vlsisystemdesign.com)
      
 ## OpenSource Physical Design
 This repository contains all the information studied and created during the [Advanced Physical Design Using OpenLANE / SKY130](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop. It is primarily foucused on a complete RTL2GDS flow using the open-soucre flow named OpenLANE. [PICORV32A](https://github.com/YosysHQ/picorv32) RISC-V core design is used for the purpose.
@@ -66,6 +67,9 @@ The above list of tools shows that, many different tools are required for variou
 
 - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
 - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
+
+# Created a VM on my laptop.
+![Screenshot 2024-04-10 121518](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/7c8c315e-fbb4-42f0-9259-68228ead6410)
 
 ## Day 1- Inception of open-source EDA, OpenLANE and Sky130 PDK
 
@@ -397,7 +401,7 @@ Now initialize magic
   `  magic -T sky130A.tech sky130_inv.mag & `
 ![Screenshot 2024-04-03 002627](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/9497e5a8-4cf4-4785-b27c-93339f3d417d)
 
-In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
+-In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
 
 - Inverter layout
 ![Screenshot 2024-04-03 002733](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/bf1ee59b-946f-404a-93da-0699b61589bd)
@@ -1144,7 +1148,50 @@ Screenshots of commands run and timing report generated
 ![Screenshot 2024-04-08 165655](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/47d7ead1-acc3-4e1c-90e0-0dff66089413)
 
 ![Screenshot 2024-04-08 165725](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/c061dbce-ae6b-40bf-8690-e80c96c98918)
+- Post-CTS OpenROAD timing analysis.
+Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrated OpenSTA in OpenROAD
 
+```bash
+  # Command to run OpenROAD tool
+  openroad
+  
+  # Reading lef file
+  read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
+  
+  # Reading def file
+  read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
+  
+  # Creating an OpenROAD database to work with
+  write_db pico_cts.db
+  
+  # Loading the created database in OpenROAD
+  read_db pico_cts.db
+  
+  # Read netlist post CTS
+  read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
+  
+  # Read library for design
+  read_liberty $::env(LIB_SYNTH_COMPLETE)
+  
+  # Link design and library
+  link_design picorv32a
+  
+  # Read in the custom sdc we created
+  read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+  
+  # Setting all cloks as propagated clocks
+  set_propagated_clock [all_clocks]
+  
+  # Check syntax of 'report_checks' command
+  help report_checks
+  
+  # Generating custom timing report
+  report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+  
+  # Exit to OpenLANE flow
+  exit
+```
+Screenshots of commands run and timing report generated
 ![Screenshot 2024-04-08 165759](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/fde12726-9de9-4292-aacc-57e03d64dfd7)
 
 ![Screenshot 2024-04-08 165827](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/5af648c1-8da7-47e9-95f1-8c6f50d92c81)
@@ -1237,7 +1284,7 @@ Screenshots of PDN def
 
 ![Screenshot 2024-04-08 215248](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/d92be306-c7d7-456e-aa3f-5fd150b0eab3)
 
-Basics of global and detail routing and configure TritonRoute
+- Basics of global and detail routing and configure TritonRoute
 The final step of physical design is Routing.
 The usage of the `def` command in the image above is to indicate that the latest completed step was the generation of PDN.
 
@@ -1247,10 +1294,10 @@ If one wants to learn about the various switches available for routing, they can
 ![r](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/b5f38ad9-e107-4151-a4a7-8554ca193ee5)
 
 ![r tcl](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/8b02e49e-0180-4804-8a09-3ab5ce41bda2)
-By executing specific commands, we can determine the type of global and detailed routing that will be performed.
+- By executing specific commands, we can determine the type of global and detailed routing that will be performed.
 In case we want to change the routing type, we can use the `set` command followed by the parameter names mentioned in the routing section of the README.md file.
 
--Perform detailed routing using TritonRoute and explore the routed layout.
+- Perform detailed routing using TritonRoute and explore the routed layout.
 Command to perform routing
 
       ```bash
