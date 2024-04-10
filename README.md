@@ -1051,8 +1051,18 @@ Screenshots of routed def
 Screenshot of fast route guide present in `openlane/designs/picorv32a/runs/01-04_19-21/tmp/routing` directory
 ![Screenshot 2024-04-08 223242](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/dba0a2da-3d11-4b52-997e-bd89de810d20)
 
+ - Post-Route parasitic extraction using SPEF extractor.
 ![Screenshot 2024-04-09 101927](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/3ee612db-bbdd-4b21-99e5-0cb9116c127b)
+Commands for SPEF extraction using external tool
 
+```bash
+   # Change directory
+   cd Desktop/work/tools/SPEF_EXTRACTOR
+   
+   # Command extract spef
+   python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef 
+  /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+```
 ![Screenshot 2024-04-09 101854](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/ec4475ec-4c25-4a45-a432-44649582657f)
 
 
