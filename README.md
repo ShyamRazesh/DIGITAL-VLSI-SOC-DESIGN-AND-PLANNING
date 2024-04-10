@@ -371,10 +371,15 @@ To see the actual layout after the flow, we have to open the magic file by addin
 ## Theory
 ## Implementation
 1.Clone custom inverter standard cell design from github repository: [Standard cell design and characterization using OpenLANE flow.](https://github.com/nickson-jose/vsdstdcelldesign)
+
 2.Load the custom inverter layout in magic and explore.
+
 3.Spice extraction of inverter in magic.
+
 4.Editing the spice model file for analysis through simulation.
+
 5.Post-layout ngspice simulations.
+
 6.Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
 
 - Topmost cell in window picorv32a      
