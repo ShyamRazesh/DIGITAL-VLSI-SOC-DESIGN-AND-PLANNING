@@ -1,5 +1,13 @@
 # DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING
 
+ ![OS](https://img.shields.io/badge/OS-Linux-yellow.svg)
+ ![EDA Tools](https://img.shields.io/badge/EDA_Tools-OpenLANE_flow,Yosys,OpenROAD,TritonRoute,openSTA,magic,netgen,GUNA-green.svg)
+ ![languages](https://img.shields.io/badge/languages-verilog,bash,TCL-orange.svg)
+
+ ![last commit](https://img.shields.io/badge/last_commit-april-blue.svg)
+ ![files](https://img.shields.io/badge/files-2-blue.svg)
+
+
 
 ## Contents
 <div class="toc">
