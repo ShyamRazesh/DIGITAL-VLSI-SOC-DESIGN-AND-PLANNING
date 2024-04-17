@@ -6,7 +6,7 @@
 
  ![last commit](https://img.shields.io/badge/last_commit-april-blue.svg)
  ![files](https://img.shields.io/badge/files-2-blue.svg)
-
+ ![repo size](https://img.shields.io/badge/repo_size-72_KB-blue.svg)
 
 
 ## Contents
