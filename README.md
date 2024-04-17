@@ -1217,7 +1217,7 @@ Screenshots of commands run and timing report generated
 ![Screenshot 2024-04-08 170225](https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING/assets/138649249/cd1df0f4-7aae-4bea-9f8b-bdd080cf6f1c)
 
 
-## <h5 id="header-5">Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</h5>
+# <h5 id="header-5">Day 5- Final steps for RTL2GDS using tritonRoute and openSTA</h5>
 
 ## Theory
 ## Implementation
